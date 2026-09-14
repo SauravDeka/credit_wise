@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>CreditWise | Prediction Result</title>
+
+
+    <!-- # CSS -->
+
+    <style>
+
+        * {
+            box-sizing: border-box;
+        }
+
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #f4f7fb;
+            color: #1f2937;
+        }
+
+
+        /* # Main Container */
+
+        .container {
+            width: 90%;
+            max-width: 700px;
+            margin: 80px auto;
+            background: white;
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+        }
+
+
+        /* # Header */
+
+        .page-header {
+            text-align: center;
+            margin-bottom: 35px;
+        }
+
+
+        .page-header h1 {
+            margin-bottom: 10px;
+        }
+
+
+        .page-header p {
+            color: #6b7280;
+            margin: 0;
+        }
+
+
+        /* # Result */
+
+        .result-container {
+            text-align: center;
+            padding: 20px;
+        }
+
+
+        .result-container h2 {
+            margin-bottom: 20px;
+        }
+
+
+        .result {
+            font-size: 42px;
+            font-weight: bold;
+            margin: 20px 0;
+        }
+
+
+        .message {
+            color: #4b5563;
+            font-size: 17px;
+            line-height: 1.6;
+            margin-bottom: 30px;
+        }
+
+
+        /* # Back Button */
+
+        .back-button {
+            display: inline-block;
+            padding: 12px 25px;
+            border-radius: 6px;
+            background: #2563eb;
+            color: white;
+            text-decoration: none;
+            font-size: 16px;
+        }
+
+
+        .back-button:hover {
+            background: #1d4ed8;
+        }
+
+
+        /* # Responsive Design */
+
+        @media (max-width: 700px) {
+
+            .container {
+                width: 95%;
+                padding: 25px;
+                margin: 40px auto;
+            }
+
+
+            .result {
+                font-size: 34px;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+    <div class="container">
+
+
+        <!-- # Header -->
+
+        <header class="page-header">
+
+            <h1>CreditWise</h1>
+
+            <p>
+                AI-Powered Loan Approval Prediction
+            </p>
+
+        </header>
+
+
+        <!-- # Prediction Result -->
+
+        <div class="result-container">
+
+            <h2>
+                Loan Prediction
+            </h2>
+
+
+            <p class="result">
+                {{ prediction }}
+            </p>
+
+
+            <p class="message">
+                {{ message }}
+            </p>
+
+
+            <!-- # Start New Application -->
+
+            <a href="/" class="back-button">
+                Check Another Application
+            </a>
+
+        </div>
+
+
+    </div>
+
+</body>
+
+</html>

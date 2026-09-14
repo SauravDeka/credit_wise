@@ -59,6 +59,57 @@
         }
 
 
+        /* # Checking Screen */
+
+        .checking-container {
+            text-align: center;
+            padding: 45px 20px;
+        }
+
+
+        .spinner {
+            width: 55px;
+            height: 55px;
+            margin: 0 auto 25px;
+            border: 5px solid #e5e7eb;
+            border-top: 5px solid #2563eb;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+
+
+        @keyframes spin {
+
+            0% {
+                transform: rotate(0deg);
+            }
+
+            100% {
+                transform: rotate(360deg);
+            }
+
+        }
+
+
+        .checking-container h2 {
+            margin-bottom: 12px;
+        }
+
+
+        .checking-container p {
+            color: #6b7280;
+            font-size: 16px;
+            margin: 8px 0;
+        }
+
+
+        .checking-status {
+            font-weight: bold;
+            color: #2563eb;
+            min-height: 24px;
+        }
+
+
         /* # Result */
 
         .result-container {
@@ -105,6 +156,13 @@
         }
 
 
+        /* # Hide Result Initially */
+
+        #result-section {
+            display: none;
+        }
+
+
         /* # Responsive Design */
 
         @media (max-width: 700px) {
@@ -145,9 +203,33 @@
         </header>
 
 
+        <!-- # Checking Application -->
+
+        <div class="checking-container" id="checking-section">
+
+            <div class="spinner"></div>
+
+
+            <h2>
+                Analyzing Your Application
+            </h2>
+
+
+            <p>
+                Please wait while CreditWise evaluates your application.
+            </p>
+
+
+            <p class="checking-status" id="checking-status">
+                Checking financial information...
+            </p>
+
+        </div>
+
+
         <!-- # Prediction Result -->
 
-        <div class="result-container">
+        <div class="result-container" id="result-section">
 
             <h2>
                 Loan Prediction
@@ -174,6 +256,50 @@
 
 
     </div>
+
+
+    <!-- # Loading Animation -->
+
+    <script>
+
+        const messages = [
+            "Checking financial information...",
+            "Evaluating loan eligibility...",
+            "Analyzing credit profile...",
+            "Running CreditWise prediction..."
+        ];
+
+
+        let messageIndex = 0;
+
+
+        const statusElement = document.getElementById("checking-status");
+
+
+        const messageInterval = setInterval(() => {
+
+            messageIndex++;
+
+            if (messageIndex < messages.length) {
+
+                statusElement.textContent = messages[messageIndex];
+
+            }
+
+        }, 1000);
+
+
+        setTimeout(() => {
+
+            clearInterval(messageInterval);
+
+            document.getElementById("checking-section").style.display = "none";
+
+            document.getElementById("result-section").style.display = "block";
+
+        }, 4000);
+
+    </script>
 
 </body>
 
